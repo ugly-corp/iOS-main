@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     private let hearthButton = UIButton(type: .system)
     private let infoButton = UIButton(type: .system)
     
-//    private let detailTableView = UITableView()
+    //private let detailTableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,7 +145,7 @@ private extension DetailViewController {
 //            make.edges.equalToSuperview()
 //        }
 //    }
-    
+//
 //    func loadGalleryData() {
 //        DispatchQueue.main.async {
 //            self.detailViewModel.fetchGallery()
@@ -153,7 +153,7 @@ private extension DetailViewController {
 //        }
 //    }
 //}
-
+//
 //extension DetailViewController: Services {
 //
 //    func reloadData() {
@@ -162,7 +162,7 @@ private extension DetailViewController {
 //        }
 //    }
 //}
-
+//
 //extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
 //
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

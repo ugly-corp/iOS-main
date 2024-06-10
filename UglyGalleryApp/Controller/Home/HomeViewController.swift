@@ -102,32 +102,3 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    guard let film = dataSource?.itemIdentifier(for: indexPath) else { return }
-//    let detailedVC = DetailedViewController()
-//
-//    NetworkManager.shared.fetchDetailedData(filmId: film.id) { [weak self] result  in
-//        switch result {
-//        case let .success(film):
-//            guard let url = URL(string: film.image) else { return }
-//            guard let data = try? Data(contentsOf: url) else { return }
-//
-//            let image = UIImage(data: data) ?? UIImage()
-//            let attributedTitle = NSAttributedString(string: film.fullTitle, attributes: Text.attributes)
-//            let attributedFilmInfo = NSAttributedString(string: "Description: \(film.plot)" , attributes: Text.attributes)
-//
-//            DispatchQueue.main.async {
-//                detailedVC.filmTitleLabel.attributedText = attributedTitle
-//                detailedVC.filmInfoTextView.attributedText = attributedFilmInfo
-//                detailedVC.filmCoverImageView.image = image
-//                detailedVC.hideLoader()
-//            }
-//
-//        case let .failure(error):
-//            self?.showAlert(error: error)
-//        }
-//    }
-//
-//    detailedVC.showLoader()
-//    self.navigationController?.pushViewController(detailedVC, animated: true)
-//}
