@@ -24,6 +24,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        createNavbarItem()
         setupSearchController()
         createSubviews()
     }
