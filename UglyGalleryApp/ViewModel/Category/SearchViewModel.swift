@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryViewModel {
+class SearchViewModel {
     
     var onGalleryWorkUpdated: (() -> Void)?
     
@@ -41,7 +41,7 @@ class CategoryViewModel {
 }
 
 // MARK: - Search
-extension CategoryViewModel {
+extension SearchViewModel {
     
     public func inSearchMode(_ searchController: UISearchController) -> Bool {
         let isActive = searchController.isActive

@@ -21,7 +21,7 @@ private extension TabbarViewController {
     
     private func configureTabs() {
         let homeViewController = HomeViewController()
-        let categoryViewContrller = CategoryViewController()
+        let categoryViewContrller = SearchViewController()
         let favoritesViewController = FavouritesViewController()
         let profileViewController = ProfileViewController()
         

@@ -8,11 +8,12 @@
 import UIKit
 import SnapKit
 
-class CategoryViewController: UIViewController {
+class SearchViewController: UIViewController {
     
-    var categoryViewModel = CategoryViewModel()
+    var searchViewModel = SearchViewModel()
     
     private let searchController = UISearchController(searchResultsController: nil)
+    
     private let categoryCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -29,7 +30,12 @@ class CategoryViewController: UIViewController {
 }
 
 //MARK: - Extension CategoryViewController
-private extension CategoryViewController {
+private extension SearchViewController {
+    
+    func createNavbarItem() {
+        self.navigationItem.title = "UG"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(name: "American Typewriter Bold", size: 32), size: 32)]
+    }
     
     func setupSearchController() {
         self.searchController.searchResultsUpdater = self
@@ -56,16 +62,16 @@ private extension CategoryViewController {
 }
 
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
-extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryViewModel.categories.count
+        return searchViewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifaer, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
         
-        let categoryContent = categoryViewModel.categories.safeObject(at: indexPath.row)
+        let categoryContent = searchViewModel.categories.safeObject(at: indexPath.row)
         cell.configureUI(category: categoryContent)
         
         return cell
@@ -80,9 +86,9 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
 }
 
 //MARK: - Search Controller Functions
-extension CategoryViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        self.categoryViewModel.updateSearchController(searchBarText: searchController.searchBar.text)
+        self.searchViewModel.updateSearchController(searchBarText: searchController.searchBar.text)
     }
 }
