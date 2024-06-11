@@ -38,13 +38,13 @@ private extension SignInViewController {
     }
     
     func createButtons() {
-        enterButton.backgroundColor = .green
+        enterButton.backgroundColor = .mainGreen
         enterButton.layer.cornerRadius = 25
         enterButton.setTitle("Войти", for: .normal)
         enterButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         reminderButton.setTitle("Забыли пароль?", for: .normal)
-        reminderButton.setTitleColor(.gray, for: .normal)
+        reminderButton.setTitleColor(.mainGray, for: .normal)
         reminderButton.addTarget(self, action: #selector(reminderAction), for: .touchUpInside)
     }
     

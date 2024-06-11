@@ -59,7 +59,7 @@ private extension AuthViewController {
         signUpButton.addTarget(self, action: #selector(actionRegistre), for: .touchUpInside)
         signUpButton.layer.cornerRadius = 25
         
-        signInButton.backgroundColor = .green
+        signInButton.backgroundColor = .mainGreen
         signInButton.setTitle("Войти", for: .normal)
         signInButton.addTarget(self, action: #selector(actionEntrance), for: .touchUpInside)
         signInButton.layer.cornerRadius = 25

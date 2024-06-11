@@ -35,12 +35,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 extension CategoryCollectionViewCell {
     
     func createSubviews() {
-        titleLable.textColor = .black
+        titleLable.textColor = .mainBlack
         titleLable.textAlignment = .center
         titleLable.font = .systemFont(ofSize: 14)
         titleLable.layer.borderWidth = 2
         titleLable.layer.masksToBounds = true
-        titleLable.layer.borderColor = UIColor.systemGray3.cgColor
+        titleLable.layer.borderColor = UIColor.mainGray.cgColor
         titleLable.layer.cornerRadius = 20
         contentView.addSubview(titleLable)
         
