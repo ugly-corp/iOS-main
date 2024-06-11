@@ -36,7 +36,7 @@ private extension ProfileViewController {
     func createNavbarItem() {
         createCustomNavigationBar()
         
-        let sharedButton = createCustomButton(imageName: "arrowshape.turn.up.right",
+        let sharedButton = createCustomButton(imageName: "share",
                                               selector: #selector(sharedButtonTapped)
         )
         
@@ -67,14 +67,14 @@ private extension ProfileViewController {
     }
     
     func createButtons() {
-        redactorButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-        redactorButton.setTitleColor(.mainGray, for: .normal)
+        redactorButton.setImage(UIImage(named: "pencil"), for: .normal)
+        redactorButton.tintColor = .mainGray
         redactorButton.addTarget(self, action: #selector(redactorButtonTapped), for: .touchUpInside)
         
-        settingsButton.backgroundColor = .mainGray
+        settingsButton.backgroundColor = .mainBlack
         settingsButton.layer.cornerRadius = 10
         settingsButton.setTitle("Настройки", for: .normal)
-        settingsButton.setTitleColor(.black, for: .normal)
+        settingsButton.setTitleColor(.mainWhite, for: .normal)
         settingsButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         
         helperButton.backgroundColor = .mainGray
@@ -84,9 +84,9 @@ private extension ProfileViewController {
         helperButton.addTarget(self, action: #selector(helperButtonTapped), for: .touchUpInside)
         
         addPublicationButton.backgroundColor = .mainBlack
-        addPublicationButton.layer.cornerRadius = 10
+        addPublicationButton.layer.cornerRadius = 30
         addPublicationButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        addPublicationButton.setTitleColor(.white, for: .normal)
+        addPublicationButton.tintColor = .mainWhite
         addPublicationButton.addTarget(self, action: #selector(addPublicationButtonTapped), for: .touchUpInside)
     }
     
