@@ -62,7 +62,7 @@ private extension TabbarViewController {
         tabBar.shadowImage = UIImage()
         
         roundLayer.fillColor = UIColor.mainBlack.cgColor
-        tabBar.tintColor = .tabbarItemAccent
-        tabBar.unselectedItemTintColor = .tabbarItemLight
+        tabBar.tintColor = .mainGreen
+        tabBar.unselectedItemTintColor = .mainWhite
     }
 }

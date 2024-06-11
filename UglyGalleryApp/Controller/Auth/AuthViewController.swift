@@ -54,7 +54,7 @@ private extension AuthViewController {
     }
     
     func setupButon() {
-        signUpButton.backgroundColor = .black
+        signUpButton.backgroundColor = .mainBlack
         signUpButton.setTitle("Создать аккаунт", for: .normal)
         signUpButton.addTarget(self, action: #selector(actionRegistre), for: .touchUpInside)
         signUpButton.layer.cornerRadius = 25
