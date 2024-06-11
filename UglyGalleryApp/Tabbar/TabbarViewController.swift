@@ -25,10 +25,10 @@ private extension TabbarViewController {
         let favoritesViewController = FavouritesViewController()
         let profileViewController = ProfileViewController()
         
-        homeViewController.tabBarItem.image = UIImage(systemName: "house")
-        categoryViewContrller.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        favoritesViewController.tabBarItem.image = UIImage(systemName: "heart")
-        profileViewController.tabBarItem.image = UIImage(systemName: "person")
+        homeViewController.tabBarItem.image = UIImage(named: "home")
+        categoryViewContrller.tabBarItem.image = UIImage(named: "search")
+        favoritesViewController.tabBarItem.image = UIImage(named: "hearth")
+        profileViewController.tabBarItem.image = UIImage(named: "profile")
         
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
         let categoryNavigationController = UINavigationController(rootViewController: categoryViewContrller)
