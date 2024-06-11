@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class SearchByCategoriesCollectionViewCell: UICollectionViewCell {
     
     static let identifaer = "cell"
     
@@ -32,7 +32,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension CategoryCollectionViewCell {
+extension SearchByCategoriesCollectionViewCell {
     
     func createSubviews() {
         titleLable.textColor = .mainBlack
@@ -45,8 +45,7 @@ extension CategoryCollectionViewCell {
         contentView.addSubview(titleLable)
         
         titleLable.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
-            make.left.equalToSuperview().inset(20)
+            make.top.left.equalToSuperview().inset(20)
             make.width.equalTo(120)
             make.height.equalTo(42)
         }
