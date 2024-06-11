@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SearchViewController: UIViewController {
+class SearchByCategoriesViewController: UIViewController {
     
     var searchViewModel = SearchViewModel()
     
@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
 }
 
 //MARK: - Extension CategoryViewController
-private extension SearchViewController {
+private extension SearchByCategoriesViewController {
     
     func createNavbarItem() {
         self.navigationItem.title = "UG"
@@ -50,7 +50,7 @@ private extension SearchViewController {
     }
     
     func createSubviews() {
-        categoryCollectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifaer)
+        categoryCollectionView.register(SearchByCategoriesCollectionViewCell.self, forCellWithReuseIdentifier: SearchByCategoriesCollectionViewCell.identifaer)
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
         
@@ -63,14 +63,14 @@ private extension SearchViewController {
 }
 
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SearchByCategoriesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchViewModel.categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifaer, for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchByCategoriesCollectionViewCell.identifaer, for: indexPath) as? SearchByCategoriesCollectionViewCell else { return UICollectionViewCell() }
         
         let categoryContent = searchViewModel.categories.safeObject(at: indexPath.row)
         cell.configureUI(category: categoryContent)
@@ -87,7 +87,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 //MARK: - Search Controller Functions
-extension SearchViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension SearchByCategoriesViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         self.searchViewModel.updateSearchController(searchBarText: searchController.searchBar.text)
