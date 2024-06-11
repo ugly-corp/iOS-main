@@ -51,39 +51,39 @@ private extension ProfileViewController {
         photoAuthor.layer.cornerRadius = 50
         
         nameAuthorLabel.text = "Имя автора"
-        nameAuthorLabel.textColor = .black
+        nameAuthorLabel.textColor = .mainBlack
         nameAuthorLabel.textAlignment = .center
         nameAuthorLabel.font = .systemFont(ofSize: 24, weight: .bold)
         
         infoLabel.text = "Информация"
-        infoLabel.textColor = .gray
+        infoLabel.textColor = .mainGray
         infoLabel.textAlignment = .center
         infoLabel.font = .systemFont(ofSize: 16)
         
         makeLabel.text = "Пора создать новую публикацию"
-        makeLabel.textColor = .black
+        makeLabel.textColor = .mainBlack
         makeLabel.textAlignment = .center
         makeLabel.font = .boldSystemFont(ofSize: 16)
     }
     
     func createButtons() {
         redactorButton.setImage(UIImage(systemName: "pencil"), for: .normal)
-        redactorButton.setTitleColor(.gray, for: .normal)
+        redactorButton.setTitleColor(.mainGray, for: .normal)
         redactorButton.addTarget(self, action: #selector(redactorButtonTapped), for: .touchUpInside)
         
-        settingsButton.backgroundColor = .gray
+        settingsButton.backgroundColor = .mainGray
         settingsButton.layer.cornerRadius = 10
         settingsButton.setTitle("Настройки", for: .normal)
         settingsButton.setTitleColor(.black, for: .normal)
         settingsButton.addTarget(self, action: #selector(settingsButtonTapped), for: .touchUpInside)
         
-        helperButton.backgroundColor = .gray
+        helperButton.backgroundColor = .mainGray
         helperButton.layer.cornerRadius = 10
         helperButton.setTitle("Помощь", for: .normal)
         helperButton.setTitleColor(.black, for: .normal)
         helperButton.addTarget(self, action: #selector(helperButtonTapped), for: .touchUpInside)
         
-        addPublicationButton.backgroundColor = .black
+        addPublicationButton.backgroundColor = .mainBlack
         addPublicationButton.layer.cornerRadius = 10
         addPublicationButton.setImage(UIImage(systemName: "plus"), for: .normal)
         addPublicationButton.setTitleColor(.white, for: .normal)

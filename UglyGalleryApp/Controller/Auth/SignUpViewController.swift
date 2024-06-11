@@ -40,7 +40,7 @@ private extension SignUpViewController {
     }
     
     func setupButton() {
-        makeButton.backgroundColor = .green
+        makeButton.backgroundColor = .mainGreen
         makeButton.layer.cornerRadius = 25
         makeButton.setTitle("Создать", for: .normal)
         makeButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
