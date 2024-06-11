@@ -28,7 +28,7 @@ extension UIViewController {
     
     func createCustomButton(imageName: String, selector: Selector) -> UIBarButtonItem {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: imageName)?.withRenderingMode(.alwaysTemplate),
+        button.setImage(UIImage(named: imageName)?.withRenderingMode(.alwaysTemplate),
                         for: .normal
         )
         button.tintColor = .systemGray
