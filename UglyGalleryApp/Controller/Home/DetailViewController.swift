@@ -32,7 +32,8 @@ private extension DetailViewController {
     
     func setupUI() {
         createNavbarItem()
-        createViews()
+        setupImageView()
+        setupLabel()
         createButtons()
         addSubviews()
         makeConstraints()
@@ -41,7 +42,7 @@ private extension DetailViewController {
     func createNavbarItem() {
         createCustomNavigationBar()
         
-        let sharedButton = createCustomButton(imageName: "arrowshape.turn.up.right",
+        let sharedButton = createCustomButton(imageName: "share",
                                               selector: #selector(sharedButtonTapped)
         )
         
@@ -51,11 +52,16 @@ private extension DetailViewController {
         navigationItem.titleView = customTitle
     }
     
-    func createViews() {
+    func setupImageView() {
         userImage.image = UIImage(systemName: "person.circle")
         userImage.layer.cornerRadius = 50
         userImage.tintColor = .systemGray2
         
+        imageWorkToUser.layer.cornerRadius = 16
+        imageWorkToUser.backgroundColor = .systemGray2
+    }
+    
+    func setupLabel() {
         descriptionWorkLabel.textColor = .black
         descriptionWorkLabel.textAlignment = .left
         descriptionWorkLabel.font = .systemFont(ofSize: 14)
@@ -80,13 +86,13 @@ private extension DetailViewController {
     
     func makeConstraints() {
         userImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(101)
+            make.top.equalToSuperview().inset(161)
             make.left.equalToSuperview().inset(40)
             make.size.equalTo(39)
         }
         
         authorNameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(109)
+            make.top.equalToSuperview().inset(169)
             make.left.equalTo(userImage.snp.right).offset(10)
         }
         
@@ -107,16 +113,15 @@ private extension DetailViewController {
         }
         
         hearthButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(650)
+            make.top.equalToSuperview().inset(720)
             make.left.equalToSuperview().inset(152)
         }
         
         infoButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(650)
+            make.top.equalToSuperview().inset(720)
             make.right.equalToSuperview().inset(152)
         }
     }
-
     @objc func sharedButtonTapped() {
         print("All good")
     }
