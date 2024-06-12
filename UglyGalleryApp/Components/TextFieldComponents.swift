@@ -71,10 +71,10 @@ private extension TextFieldType {
             tag = 0
         case .email:
             keyboardType = .emailAddress
-            returnKeyType = .done
             tag = 1
         case .password:
             keyboardType = .alphabet
+            returnKeyType = .done
             isSecureTextEntry = true
             tag = 0
         case .id:
