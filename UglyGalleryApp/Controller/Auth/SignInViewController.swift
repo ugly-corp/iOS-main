@@ -24,14 +24,20 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        setupNavbarItem()
-        createButtons()
-        addSubviews()
-        makeConstraints()
+        setupUI()
     }
 }
 
+//MARK: Setup UI
 private extension SignInViewController {
+    
+    func setupUI() {
+        setupNavbarItem()
+        createButtons()
+        textFieldDelegete()
+        addSubviews()
+        makeConstraints()
+    }
     
     func setupNavbarItem() {
         self.navigationItem.title = ""
@@ -41,11 +47,17 @@ private extension SignInViewController {
         enterButton.backgroundColor = .mainGreen
         enterButton.layer.cornerRadius = 25
         enterButton.setTitle("Войти", for: .normal)
+        enterButton.setTitleColor(.mainBlack, for: .normal)
         enterButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
         reminderButton.setTitle("Забыли пароль?", for: .normal)
         reminderButton.setTitleColor(.mainGray, for: .normal)
         reminderButton.addTarget(self, action: #selector(reminderAction), for: .touchUpInside)
+    }
+    
+    func textFieldDelegete() {
+        emailTextField.delegate = self
+        passswordTextField.delegate = self
     }
     
     func addSubviews() {
@@ -122,3 +134,24 @@ private extension SignInViewController {
     }
 }
 
+//MARK: UITextFieldDelegate
+extension SignInViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passswordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.mainBlack.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.mainGray.cgColor
+    }
+}

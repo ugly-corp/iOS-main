@@ -18,24 +18,25 @@ class DetailViewController: UIViewController {
     private let hearthButton = UIButton(type: .system)
     private let infoButton = UIButton(type: .system)
     
-    //private let detailTableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        createNavbarItem()
-        createViews()
-        createButtons()
-        //configureUI()
-        //createTableView()
-        addSubviews()
-        makeConstraints()
-        //loadGalleryData()
+        setupUI()
     }
 }
 
+//MARK: Setup UI
 private extension DetailViewController {
+    
+    func setupUI() {
+        createNavbarItem()
+        createViews()
+        createButtons()
+        addSubviews()
+        makeConstraints()
+    }
     
     func createNavbarItem() {
         createCustomNavigationBar()
@@ -130,54 +131,4 @@ private extension DetailViewController {
     }
 }
     
-//    func createTableView() {
-//        detailTableView.register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
-//        detailTableView.delegate = self
-//        detailTableView.dataSource = self
-//    }
-//
-//    func addSubviews() {
-//        view.addSubview(detailTableView)
-//    }
-//
-//    func makeConstraints() {
-//        detailTableView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-//        }
-//    }
-//
-//    func loadGalleryData() {
-//        DispatchQueue.main.async {
-//            self.detailViewModel.fetchGallery()
-//            self.detailViewModel.detailDelegate = self
-//        }
-//    }
-//}
-//
-//extension DetailViewController: Services {
-//
-//    func reloadData() {
-//        DispatchQueue.main.async {
-//            self.detailTableView.reloadData()
-//        }
-//    }
-//}
-//
-//extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return detailViewModel.details.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
-//
-//        let detailContent = detailViewModel.details.safeObject(at: indexPath.row)
-//        cell.details = detailContent
-//
-//        return cell
-//    }
-//}
-
-
 

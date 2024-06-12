@@ -20,14 +20,19 @@ class AuthViewController: UIViewController {
         
         view.backgroundColor = .red
         
+        setupUI()
+    }
+}
+
+//MARK: Setup UI
+private extension AuthViewController {
+    
+    func setupUI() {
         setupNavbarItem()
         createSubViews()
         addSubviews()
         makeConstraints()
     }
-}
-
-private extension AuthViewController {
     
     func setupNavbarItem() {
         self.navigationItem.title = ""
@@ -61,6 +66,7 @@ private extension AuthViewController {
         
         signInButton.backgroundColor = .mainGreen
         signInButton.setTitle("Войти", for: .normal)
+        signInButton.setTitleColor(.mainBlack, for: .normal)
         signInButton.addTarget(self, action: #selector(actionEntrance), for: .touchUpInside)
         signInButton.layer.cornerRadius = 25
     }

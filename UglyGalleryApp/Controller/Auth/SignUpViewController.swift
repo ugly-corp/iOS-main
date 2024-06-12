@@ -25,15 +25,20 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        setupNavbarItem()
-        setupButton()
-        addSubviews()
-        makeConstraints()
+        setupUI()
     }
 }
 
-//MARK: Exstension RegistrationViewController
+//MARK: Setup UI
 private extension SignUpViewController {
+    
+    func setupUI() {
+        setupNavbarItem()
+        setupButton()
+        textFieldDelegate()
+        addSubviews()
+        makeConstraints()
+    }
     
     func setupNavbarItem() {
         self.navigationItem.title = ""
@@ -43,7 +48,14 @@ private extension SignUpViewController {
         makeButton.backgroundColor = .mainGreen
         makeButton.layer.cornerRadius = 25
         makeButton.setTitle("Создать", for: .normal)
+        makeButton.setTitleColor(.mainBlack, for: .normal)
         makeButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+    }
+    
+    func textFieldDelegate() {
+        userNameTextField.delegate = self
+        emailTextField.delegate = self
+        passswordTextField.delegate = self
     }
     
     func addSubviews() {
@@ -128,5 +140,29 @@ private extension SignUpViewController {
         
         let entanceVC = SignInViewController()
         navigationController?.pushViewController(entanceVC, animated: true)
+    }
+}
+
+//MARK: UITextFieldDelegate
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case userNameTextField:
+            emailTextField.becomeFirstResponder()
+        case emailTextField:
+            passswordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.mainBlack.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.mainGray.cgColor
     }
 }
