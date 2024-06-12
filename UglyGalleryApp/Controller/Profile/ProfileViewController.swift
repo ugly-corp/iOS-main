@@ -23,15 +23,20 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        setupUI()
+    }
+}
+
+//MARK: Setup UI
+private extension ProfileViewController {
+    
+    func setupUI() {
         createNavbarItem()
         createSubviews()
         createButtons()
         addSubviews()
         makeConstrants()
     }
-}
-
-private extension ProfileViewController {
     
     func createNavbarItem() {
         createCustomNavigationBar()

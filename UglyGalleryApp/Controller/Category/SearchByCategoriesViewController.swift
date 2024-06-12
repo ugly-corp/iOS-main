@@ -24,14 +24,18 @@ class SearchByCategoriesViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        setupUI()
+    }
+}
+
+//MARK: Setup UI
+private extension SearchByCategoriesViewController {
+    
+    func setupUI() {
         createNavbarItem()
         setupSearchController()
         createSubviews()
     }
-}
-
-//MARK: - Extension CategoryViewController
-private extension SearchByCategoriesViewController {
     
     func createNavbarItem() {
         self.navigationItem.title = "UG"

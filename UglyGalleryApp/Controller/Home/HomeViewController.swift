@@ -22,14 +22,19 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        setupUI()
+    }
+}
+
+//MARK: Setup UI
+extension HomeViewController {
+    
+    func setupUI() {
         createNavbarItem()
         createSubview()
         makeConstrants()
         loadGalleryData()
     }
-}
-
-extension HomeViewController {
     
     func createNavbarItem() {
         self.navigationItem.title = "UG"
@@ -57,6 +62,7 @@ extension HomeViewController {
     }
 }
 
+//MARK: Services
 extension HomeViewController: Services {
     
     func reloadData() {
@@ -66,6 +72,7 @@ extension HomeViewController: Services {
     }
 }
 
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
