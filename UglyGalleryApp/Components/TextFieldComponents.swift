@@ -32,6 +32,26 @@ class TextFieldType: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func becomeFirstResponder() -> Bool {
+            let didBecomeFirstResponder = super.becomeFirstResponder()
+
+            if didBecomeFirstResponder {
+                layer.borderColor = UIColor.mainBlack.cgColor
+            }
+
+            return didBecomeFirstResponder
+        }
+
+        override func resignFirstResponder() -> Bool {
+            let didResignFirstResponder = super.resignFirstResponder()
+
+            if didResignFirstResponder {
+                layer.borderColor = UIColor.mainGray.cgColor
+            }
+
+            return didResignFirstResponder
+        }
 }
 
 private extension TextFieldType {
