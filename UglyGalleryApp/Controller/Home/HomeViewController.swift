@@ -18,6 +18,10 @@ class HomeViewController: UIViewController {
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }()
     
+    private var segmentControl = UISegmentedControl()
+    
+    var segments = ["Все", "Авторы"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -30,27 +34,50 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     func setupUI() {
-        createNavbarItem()
-        createSubview()
+        setupNavbarItem()
+        setupCollectionView()
+        setupSegmentControll()
+        addSubViews()
         makeConstrants()
         loadGalleryData()
     }
     
-    func createNavbarItem() {
+    func setupNavbarItem() {
         self.navigationItem.title = "UG"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(descriptor: UIFontDescriptor(name: "American Typewriter Bold", size: 32), size: 32)]
     }
     
-    func createSubview() {
+    func setupCollectionView() {
         galleryCollectionView.register(UglyGalleryCollectionViewCell.self, forCellWithReuseIdentifier: UglyGalleryCollectionViewCell.identifier)
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
-        view.addSubview(galleryCollectionView)
+    }
+    
+    func setupSegmentControll() {
+        segmentControl = UISegmentedControl(items: segments)
+        segmentControl.backgroundColor = .mainGray
+        segmentControl.selectedSegmentTintColor = .mainBlack
+        segmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        segmentControl.selectedSegmentIndex = 0
+        segmentControl.addTarget(self, action: #selector(selectedSegmens), for: .valueChanged)
+    }
+    
+    func addSubViews() {
+        [galleryCollectionView, segmentControl].forEach {
+            view.addSubview($0)
+        }
     }
     
     func makeConstrants() {
         galleryCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        segmentControl.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(130)
+            make.width.equalTo(164)
+            make.height.equalTo(27)
         }
     }
     
@@ -58,6 +85,12 @@ extension HomeViewController {
         DispatchQueue.main.async {
             self.galleryViewModel.fetchGallery()
             self.galleryViewModel.galleryDelegate = self
+        }
+    }
+    
+    @objc func selectedSegmens(target: UISegmentedControl) {
+        if target == segmentControl {
+            let segmentIndex = target.selectedSegmentIndex
         }
     }
 }
