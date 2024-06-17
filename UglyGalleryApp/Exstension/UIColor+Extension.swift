@@ -24,4 +24,8 @@ extension UIColor {
     static var mainGray: UIColor {
         #colorLiteral(red: 0.7803922296, green: 0.7803922296, blue: 0.7803922296, alpha: 1)
     }
+    
+    static var sharedLinkGray: UIColor {
+        #colorLiteral(red: 0.9516403079, green: 0.9367554188, blue: 0.9370220304, alpha: 1)
+    }
 }

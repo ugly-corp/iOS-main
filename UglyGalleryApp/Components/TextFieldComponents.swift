@@ -17,6 +17,7 @@ enum TextField {
     case title
     case description
     case link
+    case sharedLink
 }
 
 class TextFieldType: UITextField {
@@ -81,6 +82,11 @@ private extension TextFieldType {
             keyboardType = .default
             returnKeyType = .done
             tag = 8
+        case .sharedLink:
+            placeholder = "https://"
+            backgroundColor = .sharedLinkGray
+            keyboardType = .alphabet
+            tag = 9
         }
     }
 }

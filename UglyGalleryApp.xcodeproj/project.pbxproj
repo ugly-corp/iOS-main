@@ -39,6 +39,8 @@
 		B50A690A2B9DB02300264BD9 /* UIViewController+Exstension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A69092B9DB02300264BD9 /* UIViewController+Exstension.swift */; };
 		B50A690D2B9DDC5F00264BD9 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A690C2B9DDC5F00264BD9 /* DetailViewModel.swift */; };
 		B50A690F2B9DEFBB00264BD9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50A690E2B9DEFBB00264BD9 /* DetailTableViewCell.swift */; };
+		B54201312C20682B00E5BE35 /* SharedLinkPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54201302C20682B00E5BE35 /* SharedLinkPopUP.swift */; };
+		B54201332C20685100E5BE35 /* InfoWorkPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54201322C20685100E5BE35 /* InfoWorkPopUp.swift */; };
 		B59F7F3B2BA071C000C7380D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F7F3A2BA071C000C7380D /* SearchViewModel.swift */; };
 		B59F7F3D2BA0753E00C7380D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F7F3C2BA0753E00C7380D /* CategoryModel.swift */; };
 		B59F7F402BA083E700C7380D /* SearchByCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59F7F3F2BA083E700C7380D /* SearchByCategoriesCollectionViewCell.swift */; };
@@ -80,6 +82,8 @@
 		B50A69092B9DB02300264BD9 /* UIViewController+Exstension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Exstension.swift"; sourceTree = "<group>"; };
 		B50A690C2B9DDC5F00264BD9 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B50A690E2B9DEFBB00264BD9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		B54201302C20682B00E5BE35 /* SharedLinkPopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLinkPopUP.swift; sourceTree = "<group>"; };
+		B54201322C20685100E5BE35 /* InfoWorkPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWorkPopUp.swift; sourceTree = "<group>"; };
 		B59F7F3A2BA071C000C7380D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		B59F7F3C2BA0753E00C7380D /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		B59F7F3F2BA083E700C7380D /* SearchByCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -264,6 +268,8 @@
 			children = (
 				B50A68872B97563E00264BD9 /* LabelComponents.swift */,
 				B50A68892B97564F00264BD9 /* TextFieldComponents.swift */,
+				B54201302C20682B00E5BE35 /* SharedLinkPopUP.swift */,
+				B54201322C20685100E5BE35 /* InfoWorkPopUp.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				B50A69062B9CA86E00264BD9 /* HomeGalleryViewModel.swift in Sources */,
 				B50A68C22B98B89600264BD9 /* FavouritesViewController.swift in Sources */,
 				B50A68C62B98C01800264BD9 /* UIColor+Extension.swift in Sources */,
+				B54201312C20682B00E5BE35 /* SharedLinkPopUP.swift in Sources */,
 				B50A68BE2B9887AD00264BD9 /* Protocols.swift in Sources */,
 				B50A69002B9CA25400264BD9 /* GalleryModel.swift in Sources */,
 				B50A68832B973F6F00264BD9 /* SignUpViewController.swift in Sources */,
@@ -403,6 +410,7 @@
 				B59F7F452BA0FD3800C7380D /* СreatePublicationViewController.swift in Sources */,
 				B50A68C02B98B85C00264BD9 /* SearchByCategoriesViewController.swift in Sources */,
 				B50A68C42B98B8B900264BD9 /* ProfileViewController.swift in Sources */,
+				B54201332C20685100E5BE35 /* InfoWorkPopUp.swift in Sources */,
 				B50A688A2B97564F00264BD9 /* TextFieldComponents.swift in Sources */,
 				B50A68B82B98869900264BD9 /* ApiManager.swift in Sources */,
 				B50A69082B9DA81A00264BD9 /* DetailViewController.swift in Sources */,
