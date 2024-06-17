@@ -22,6 +22,13 @@ enum Label: String {
     case title = "Название"
     case description = "Описание "
     case link = "Ссылка"
+    case sharedLink = "Поделитесь ссылкой"
+    case datePublic = "Дата публикации"
+    case date = "5 февраля, 2005"
+    case categoryTitle = "Категория"
+    case category = "мяу"
+    case preview = "Просмотры"
+    case previewQuantity = "33884338"
 }
 
 
@@ -52,7 +59,7 @@ private extension LabelType {
             textAlignment = .left
             font = .boldSystemFont(ofSize: 24)
             textColor = .black
-        } else if type == .authorName || type == .descriptionTitle {
+        } else if type == .authorName || type == .descriptionTitle || type == .sharedLink  || type == .datePublic || type == .categoryTitle || type == .preview {
             textAlignment = .left
             font = .systemFont(ofSize: 20)
             textColor = .black

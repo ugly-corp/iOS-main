@@ -50,6 +50,7 @@ private extension DetailViewController {
         
         navigationItem.rightBarButtonItem = sharedButton
         navigationItem.titleView = customTitle
+        navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func setupImageView() {
@@ -122,8 +123,12 @@ private extension DetailViewController {
             make.right.equalToSuperview().inset(152)
         }
     }
+    
     @objc func sharedButtonTapped() {
-        print("All good")
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            let sharedLinkPopView = SharedLinkPopUP()
+            self.view.addSubview(sharedLinkPopView)
+        }
     }
     
     
@@ -132,7 +137,10 @@ private extension DetailViewController {
     }
     
     @objc func infoButtonTapped() {
-        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            let infoWorkPopView = InfoWorkPopUp()
+            self.view.addSubview(infoWorkPopView)
+        }
     }
 }
     
